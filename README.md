@@ -147,9 +147,8 @@ Nota: reemplazar 192.168.1.16 por la IP local vigente del equipo.
 
 ## Limitaciones conocidas (ambiente de prueba)
 
-- La sesión JWT no persiste tras reiniciar la aplicación (almacenamiento en memoria)
-- En navegador web, las notificaciones del sistema tienen soporte limitado; el panel in-app cubre la experiencia de alerta
-- La generación de APK requiere recursos de memoria suficientes en el equipo de compilación
+- La sesión JWT se mantiene mientras la aplicación permanece abierta.
+- Al reiniciar la aplicación, el usuario debe iniciar sesión nuevamente.
 
 ## Criterios de aceptación
 
