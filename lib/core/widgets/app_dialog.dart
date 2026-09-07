@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Modales reutilizables, compactos y con estilo uniforme.
 class AppDialog {
   AppDialog._();
 

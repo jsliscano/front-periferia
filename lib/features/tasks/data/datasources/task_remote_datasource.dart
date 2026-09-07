@@ -4,7 +4,6 @@ import '../../domain/entities/task.dart';
 import '../../domain/entities/task_page.dart';
 import '../models/task_response.dart';
 
-/// Acceso remoto a endpoints de tareas.
 class TaskRemoteDataSource {
   TaskRemoteDataSource({ApiClient? apiClient})
       : _apiClient = apiClient ?? ApiClient();

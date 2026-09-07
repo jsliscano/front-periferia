@@ -6,7 +6,6 @@ import '../../features/auth/data/session_store.dart';
 import 'api_config.dart';
 import 'api_exception.dart';
 
-/// Cliente HTTP compartido para llamadas al backend.
 class ApiClient {
   ApiClient({http.Client? client}) : _client = client ?? http.Client();
 

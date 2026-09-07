@@ -14,7 +14,6 @@ import '../widgets/task_list_item.dart';
 import '../widgets/task_notifications_bell.dart';
 import 'task_form_page.dart';
 
-/// Pantalla con el listado de tareas conectado al backend (con paginación).
 class TaskListPage extends StatefulWidget {
   const TaskListPage({super.key, this.taskRepository});
 
@@ -96,7 +95,6 @@ class _TaskListPageState extends State<TaskListPage> {
 
       if (!mounted) return;
 
-      // Si la página pedida quedó vacía (por ejemplo al borrar), retrocede.
       if (result.content.isEmpty && targetPage > 0) {
         await _loadTasks(page: targetPage - 1);
         return;
@@ -113,7 +111,6 @@ class _TaskListPageState extends State<TaskListPage> {
         _isLoading = false;
       });
 
-      // Notificaciones en segundo plano: no bloquean la lista.
       unawaited(_syncUpcomingNotifications());
     } on ApiException catch (error) {
       if (!mounted) return;
@@ -156,7 +153,6 @@ class _TaskListPageState extends State<TaskListPage> {
       setState(() => _upcomingTasks = upcoming);
       await _showUpcomingDueModalIfNeeded(upcoming);
     } catch (_) {
-      // No bloquea la UI si fallan las notificaciones.
     }
   }
 

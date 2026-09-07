@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Tema centralizado de la app (alineado con el login).
 class AppTheme {
   AppTheme._();
 

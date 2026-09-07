@@ -1,4 +1,3 @@
-/// Respuesta alineada con UserResponse del backend.
 class UserResponse {
   const UserResponse({
     required this.id,

@@ -1,4 +1,3 @@
-/// Estado de una tarea alineado con el backend (PENDING / COMPLETED).
 enum TaskStatus {
   pendiente('PENDING'),
   completada('COMPLETED');
@@ -18,7 +17,6 @@ enum TaskStatus {
   }
 }
 
-/// Entidad de dominio que representa una tarea.
 class Task {
   const Task({
     required this.id,

@@ -1,6 +1,5 @@
 import '../domain/entities/auth_session.dart';
 
-/// Almacén en memoria de la sesión actual.
 class SessionStore {
   SessionStore._();
 

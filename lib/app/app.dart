@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../features/auth/presentation/pages/login_page.dart';
 import 'theme/app_theme.dart';
 
-/// Punto de configuración de la aplicación (tema, rutas, localización).
 class App extends StatelessWidget {
   const App({super.key});
 

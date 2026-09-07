@@ -1,6 +1,5 @@
 import '../../domain/entities/task.dart';
 
-/// Respuesta de tarea alineada con TaskResponse del backend.
 class TaskResponse {
   const TaskResponse({
     required this.id,
@@ -62,7 +61,6 @@ class TaskResponse {
     return null;
   }
 
-  /// Solo día/mes/año según lo enviado por API (sin correr el día por UTC).
   static DateTime? _parseCalendarDate(dynamic value) {
     if (value is String && value.isNotEmpty) {
       final match = RegExp(r'^(\d{4})-(\d{2})-(\d{2})').firstMatch(value);

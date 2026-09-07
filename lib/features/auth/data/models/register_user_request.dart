@@ -1,4 +1,3 @@
-/// Body de registro alineado con RegisterUserRequest del backend.
 class RegisterUserRequest {
   const RegisterUserRequest({
     required this.name,

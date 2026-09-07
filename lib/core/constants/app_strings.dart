@@ -1,4 +1,3 @@
-/// Textos compartidos de la aplicación.
 class AppStrings {
   AppStrings._();
 

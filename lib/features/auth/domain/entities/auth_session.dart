@@ -1,4 +1,3 @@
-/// Sesión autenticada tras un login exitoso.
 class AuthSession {
   const AuthSession({
     required this.token,

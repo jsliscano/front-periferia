@@ -1,13 +1,8 @@
 import 'package:flutter/foundation.dart';
 
-/// Configuración de la API del backend Spring Boot.
 class ApiConfig {
   ApiConfig._();
 
-  /// Prioridad:
-  /// 1) `--dart-define=API_BASE_URL=...` (APK en dispositivo físico)
-  /// 2) Web / Windows → localhost
-  /// 3) Emulador Android → 10.0.2.2
   static String get baseUrl {
     const fromEnv = String.fromEnvironment('API_BASE_URL');
     if (fromEnv.isNotEmpty) {

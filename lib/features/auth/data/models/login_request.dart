@@ -1,4 +1,3 @@
-/// Body de login alineado con LoginRequest del backend.
 class LoginRequest {
   const LoginRequest({
     required this.email,

@@ -3,7 +3,6 @@ import 'package:timezone/timezone.dart' as tz;
 
 import '../../features/tasks/domain/entities/task.dart';
 
-/// Servicio de notificaciones locales para tareas próximas a vencer.
 class TaskNotificationService {
   TaskNotificationService._();
 
@@ -15,7 +14,6 @@ class TaskNotificationService {
   bool _initialized = false;
   Future<void>? _initFuture;
 
-  /// Días de anticipación: solo vencidas o con ≤ 1 día para vencer.
   static const int upcomingDays = 1;
 
   Future<void> init() {
@@ -25,7 +23,6 @@ class TaskNotificationService {
   Future<void> _doInit() async {
     if (_initialized) return;
 
-    // Colombia (UTC-5, sin DST): evita cargar la DB completa de timezones (~1 MB).
     tz.setLocalLocation(
       tz.Location(
         'America/Bogota',
@@ -83,7 +80,6 @@ class TaskNotificationService {
         ?.requestPermissions(alert: true, badge: true, sound: true);
   }
 
-  /// Pendientes vencidas o que vencen hoy / mañana (≤ [upcomingDays] día).
   List<Task> getUpcomingTasks(List<Task> tasks) {
     final now = DateTime.now();
     final today = DateTime(now.year, now.month, now.day);
@@ -105,7 +101,6 @@ class TaskNotificationService {
       });
   }
 
-  /// Sincroniza notificaciones locales con las tareas pendientes.
   Future<void> syncFromTasks(List<Task> tasks) async {
     try {
       if (!_initialized) await init();
@@ -119,7 +114,6 @@ class TaskNotificationService {
         await _scheduleForTask(task);
       }
     } catch (_) {
-      // Silencioso: no interrumpe el flujo de tareas.
     }
   }
 
@@ -139,7 +133,6 @@ class TaskNotificationService {
     final reminderDay = dueDay.subtract(const Duration(days: 1));
     final now = tz.TZDateTime.now(tz.local);
 
-    // Recordatorio 1 día antes (09:00).
     final reminderTz = tz.TZDateTime(
       tz.local,
       reminderDay.year,
@@ -157,7 +150,6 @@ class TaskNotificationService {
       );
     }
 
-    // Recordatorio el día de vencimiento (09:00).
     final dueTz = tz.TZDateTime(
       tz.local,
       dueDay.year,
@@ -173,7 +165,6 @@ class TaskNotificationService {
         when: dueTz,
       );
     } else if (_isDueSoon(due)) {
-      // Si ya está cerca o vencida, avisa de inmediato.
       await _plugin.show(
         id: _notificationId(task.id, 1),
         title: _isOverdue(due) ? 'Tarea vencida' : 'Tarea próxima a vencer',
@@ -238,7 +229,6 @@ class TaskNotificationService {
   }
 
   int _notificationId(int taskId, int slot) {
-    // Evita colisiones entre recordatorio previo y del día.
     return (taskId.abs() % 100000) * 10 + slot;
   }
 }

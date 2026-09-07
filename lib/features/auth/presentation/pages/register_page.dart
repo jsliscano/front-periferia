@@ -5,7 +5,6 @@ import '../../../../core/widgets/app_dialog.dart';
 import '../../data/repositories/auth_repository_impl.dart';
 import '../../domain/repositories/auth_repository.dart';
 
-/// Pantalla de registro de usuario.
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key, this.authRepository});
 

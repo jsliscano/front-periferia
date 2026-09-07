@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../../../core/notifications/task_notification_service.dart';
 import '../../domain/entities/task.dart';
 
-/// Campanita del AppBar con badge y panel centrado de tareas por vencer.
 class TaskNotificationsBell extends StatelessWidget {
   const TaskNotificationsBell({
     super.key,
@@ -16,7 +15,6 @@ class TaskNotificationsBell extends StatelessWidget {
   final bool enabled;
   final ValueChanged<Task>? onTaskSelected;
 
-  /// Muestra el panel centrado (campana o alerta automática).
   static Future<void> showUpcomingPanel(
     BuildContext context, {
     required List<Task> upcoming,

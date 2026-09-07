@@ -7,7 +7,6 @@ import '../../data/repositories/auth_repository_impl.dart';
 import '../../domain/repositories/auth_repository.dart';
 import 'register_page.dart';
 
-/// Pantalla de inicio de sesión (simple y estable en web).
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key, this.authRepository});
 

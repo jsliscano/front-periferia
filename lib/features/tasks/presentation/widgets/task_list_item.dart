@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../domain/entities/task.dart';
 
-/// Ítem de una tarea en el listado.
 class TaskListItem extends StatelessWidget {
   const TaskListItem({
     super.key,

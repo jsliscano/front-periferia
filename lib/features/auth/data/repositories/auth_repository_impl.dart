@@ -6,7 +6,6 @@ import '../models/login_request.dart';
 import '../models/register_user_request.dart';
 import '../session_store.dart';
 
-/// Implementación que habla con el backend Spring Boot.
 class AuthRepositoryImpl implements AuthRepository {
   AuthRepositoryImpl({AuthRemoteDataSource? remoteDataSource})
       : _remoteDataSource = remoteDataSource ?? AuthRemoteDataSource();

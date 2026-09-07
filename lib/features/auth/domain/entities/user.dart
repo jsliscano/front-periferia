@@ -1,4 +1,3 @@
-/// Usuario registrado en el sistema.
 class User {
   const User({
     required this.id,

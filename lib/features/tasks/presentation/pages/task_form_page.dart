@@ -4,7 +4,6 @@ import '../../../../core/widgets/app_dialog.dart';
 import '../../../auth/data/session_store.dart';
 import '../../domain/entities/task.dart';
 
-/// Resultado del formulario para crear/editar en el listado.
 class TaskFormResult {
   const TaskFormResult({
     required this.titulo,
@@ -19,7 +18,6 @@ class TaskFormResult {
   final TaskStatus estado;
 }
 
-/// Pantalla para crear o editar una tarea.
 class TaskFormPage extends StatefulWidget {
   const TaskFormPage({super.key, this.task});
 

@@ -5,7 +5,6 @@ import '../models/login_response.dart';
 import '../models/register_user_request.dart';
 import '../models/user_response.dart';
 
-/// Acceso remoto a endpoints de autenticación / usuarios.
 class AuthRemoteDataSource {
   AuthRemoteDataSource({ApiClient? apiClient})
       : _apiClient = apiClient ?? ApiClient();

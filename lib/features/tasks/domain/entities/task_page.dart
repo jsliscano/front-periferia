@@ -1,6 +1,5 @@
 import '../entities/task.dart';
 
-/// Página de resultados alineada con PageResponse del backend.
 class TaskPage {
   const TaskPage({
     required this.content,

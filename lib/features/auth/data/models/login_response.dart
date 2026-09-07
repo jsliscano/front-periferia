@@ -1,4 +1,3 @@
-/// Respuesta alineada con LoginResponse del backend.
 class LoginResponse {
   const LoginResponse({
     required this.token,
